@@ -91,8 +91,10 @@ s3sync <- function(path = ".", bucket, prefix = "", direction = c("upload", "dow
         s3.names <- substr(s3.names[kp == prefix], nchar(prefix) + 1L, 1e4)
         ## also subset b since we use it later
         b <- b[kp == prefix]
-        cat("names after prefix filter:\n")
-        print(s3.names)
+        if (isTrue(verbose)) {
+            cat("names after prefix filter:\n")
+            print(s3.names)
+        }
     }
 
     ## download missing objects that are missing locally
