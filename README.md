@@ -1,6 +1,6 @@
-# AWS S3 Client Package
+# HFF AWS S3 Client Package
 
-**aws.s3** is a simple client package for the [Amazon Web Services (AWS) Simple Storage Service (S3)](https://aws.amazon.com/s3/) REST API. While [other packages](https://github.com/ropensci/webservices#amazon) currently connect R to S3, they do so incompletely (mapping only some of the API endpoints to R) and most implementations rely on the AWS command-line tools, which users may not have installed on their system.
+**hffaws.s3** is a simple client package for the [Amazon Web Services (AWS) Simple Storage Service (S3)](https://aws.amazon.com/s3/) REST API. While [other packages](https://github.com/ropensci/webservices#amazon) currently connect R to S3, they do so incompletely (mapping only some of the API endpoints to R) and most implementations rely on the AWS command-line tools, which users may not have installed on their system.
 
 To use the package, you will need an AWS account and to enter your credentials into R. Your keypair can be generated on the [IAM Management Console](https://aws.amazon.com/) under the heading *Access Keys*. Note that you only have access to your secret key once. After it is generated, you need to save it in a secure location. New keypairs can be generated at any time if yours has been lost, stolen, or forgotten. The [**aws.iam** package](https://github.com/cloudyr/aws.iam) profiles tools for working with IAM, including creating roles, users, groups, and credentials programmatically; it is not needed to *use* IAM credentials.
 
@@ -23,7 +23,7 @@ Sys.setenv("AWS_ACCESS_KEY_ID" = "mykey",
 The package can be used to examine publicly accessible S3 buckets and publicly accessible S3 objects without registering an AWS account. If credentials have been generated in the AWS console and made available in R, you can find your available buckets using:
 
 ```R
-library("aws.s3")
+library("hffaws.s3")
 bucketlist()
 ```
 
